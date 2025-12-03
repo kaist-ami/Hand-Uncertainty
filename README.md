@@ -80,7 +80,7 @@ hand_uncertainty/
 ```
 
 ## Evaluate hand pose estimation performance
-For [FreiHAND](https://github.com/lmb-freiburg/freihand) and [HO-3D](https://codalab.lisn.upsaclay.fr/competitions/4318), `.json` prediction files stored in `results/` can be used for evaluation using their corresponding evaluation processes.
+For [FreiHAND](https://github.com/lmb-freiburg/freihand) and [HO-3D](https://codalab.lisn.upsaclay.fr/competitions/4318), `freihand-val.json` and `ho3d-val.json` prediction files stored in `results/` can be used for evaluation using their corresponding evaluation processes.
 
 ## Evaluate uncertainty estimation performance
 Run below command to evaluate AUSC, AUSE and pearson correlation.  
