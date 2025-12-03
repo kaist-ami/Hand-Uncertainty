@@ -28,7 +28,7 @@ pip install -r requirements.txt
 Follow the instructions in [HaMeR](https://github.com/geopavlakos/hamer) to prepare trained hamer models, MANO model, hamer training data and hamer evaluation data.
 
 # 🚀 Training
-You need to change the model type `model_type` in the [code](https://github.com/kaist-ami/Hand-Uncertainty/blob/main/hamer_uncertainty/configs_hydra/train.yaml).  
+You need to change the model type `model_type` in the [code](https://github.com/kaist-ami/Hand-Uncertainty/blob/main/hamer_uncertainty/configs_hydra/train.yaml) and index of GPU device `devices` in the [code](https://github.com/kaist-ami/Hand-Uncertainty/blob/main/hamer_uncertainty/configs_hydra/trainer/gpu.yaml).  
 
 [Model Type]
 * **ours**: our proposed correlation-aware uncertainty parameterization
@@ -38,7 +38,7 @@ You need to change the model type `model_type` in the [code](https://github.com/
 
 You can pass number of GPU device ${DEVICE_NUM} and experiment name ${EXP_NAME} as an argument to the script.
 ```
-CUDA_VISIBLE_DEVICES=${DEVICE_NUM} python train.py exp_name=${EXP_NAME} experiment=hamer_vit_transformer trainer=gpu launcher=local
+python train.py exp_name=${EXP_NAME} experiment=hamer_vit_transformer trainer=gpu launcher=local
 ```
 
 # 🧪 Testing
