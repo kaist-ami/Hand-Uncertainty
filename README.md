@@ -67,6 +67,18 @@ You need to change the model checkpoint path `ckpt_path`, model type `model_type
 python eval.py 
 python eval_uncertainty.py 
 ```
+
+After running the commands, the `results/` directory should look like:
+```
+hand_uncertainty/
+└── results/
+    └── ${EXP_NAME}/
+        ├── freihand-val.json
+        ├── freihand-val_uncertainty.json
+        ├── ho3d-val.json
+        └── ho3d-val_uncertainty.json
+```
+
 ## Evaluate hand pose estimation performance
 For [FreiHAND](https://github.com/lmb-freiburg/freihand) and [HO-3D](https://codalab.lisn.upsaclay.fr/competitions/4318), `.json` prediction files stored in `results/` can be used for evaluation using their corresponding evaluation processes.
 
