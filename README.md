@@ -1,7 +1,7 @@
 # Hand-Uncertainty
 [BMVC'25] Official repository for "Learning Correlation-aware Aleatoric Uncertainty for 3D Hand Pose Estimation"
 
-# Getting started
+# 📣 Getting started
 
 ## Model checkpoints
 You can download model checkpoints (ours and baselines) from [stage1 model](https://drive.google.com/file/d/1jI9feFcUuhXst1pM1_xOMvqE8cgUzP_t/view?usp=sharing).
@@ -27,7 +27,7 @@ pip install -r requirements.txt
 ## HaMeR data and model preparation
 Follow the instructions in [HaMeR](https://github.com/geopavlakos/hamer) to prepare trained hamer models, MANO model, hamer training data and hamer evaluation data.
 
-# Evalution
+# 🧪 Evalution
 ## Prepare evaluation dataset
 Download FreiHAND evaluation set and HO-3D evaluation set from [FreiHAND](https://github.com/lmb-freiburg/freihand) and [HO-3D](https://codalab.lisn.upsaclay.fr/competitions/4318) and place them in `uncertainty_eval/freihand/gt/` and `uncertainty_eval/ho3d/gt/`.
 ```
