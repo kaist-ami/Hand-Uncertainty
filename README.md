@@ -1,5 +1,4 @@
-# Learning Correlation-aware Aleatoric Uncertainty for 3D Hand Pose Estimation
-<h3>BMVC 2025</h3>
+# Learning Correlation-aware Aleatoric Uncertainty for 3D Hand Pose Estimation (BMVC 2025)
 
 ### [Project Page](https://hand-uncertainty.github.io/) | [Paper](https://arxiv.org/abs/2509.01242)
 
