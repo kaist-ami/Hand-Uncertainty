@@ -36,7 +36,7 @@ You need to change the model type `model_type` in the [code](https://github.com/
 * **full**: full covariance parameterization
 * **ours_wo_linear**: removing the linear layer from our parameterization
 
-You can pass number of GPU device ${DEVICE_NUM} and experiment name ${EXP_NAME} as an argument to the script.
+You can pass experiment name ${EXP_NAME} as an argument to the script.
 ```
 python train.py exp_name=${EXP_NAME} experiment=hamer_vit_transformer trainer=gpu launcher=local
 ```
