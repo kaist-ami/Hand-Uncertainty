@@ -47,7 +47,7 @@ hand_uncertainty/
 
 ## Evaluation
 Run evaluation on FreiHAND and HO-3D datasets as follows, results are stored in `results/`.
-You can change the model checkpoint path `ckpt_path`, model type `model_type` and experiment name `exp_name` in the [code](https://github.com/postech-ami/hand_uncertainty/hamer_uncertainty/configs_hydra/model_config.yaml).
+You can change the model checkpoint path `ckpt_path`, model type `model_type` and experiment name `exp_name` in the [code](https://github.com/kaist-ami/Hand-Uncertainty/blob/main/hamer_uncertainty/configs_hydra/model_config.yaml).
 ```
 python eval.py 
 python eval_uncertainty.py 
