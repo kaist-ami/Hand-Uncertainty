@@ -1,0 +1,11 @@
+FREIHAND-VAL:
+    TYPE: ImageDataset
+    DATASET_FILE: hamer_evaluation_data/freihand_val.npz
+    IMG_DIR: dataset/FreiHAND_pub_v2_eval/evaluation/rgb/
+    KEYPOINT_LIST: [0] # Dummy
+
+HO3D-VAL:
+    TYPE: ImageDataset
+    DATASET_FILE: hamer_evaluation_data/ho3d_val.npz
+    IMG_DIR: dataset/HO3D_v2/evaluation/
+    KEYPOINT_LIST: [0] # Dummy
