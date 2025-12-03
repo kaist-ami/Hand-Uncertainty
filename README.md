@@ -27,7 +27,7 @@ pip install -r requirements.txt
 ## HaMeR data and model preparation
 Follow the instructions in [HaMeR](https://github.com/geopavlakos/hamer) to prepare trained hamer models, MANO model, hamer training data and hamer evaluation data.
 
-# 🧪 Evalution
+# 🧪 Testing
 ## Prepare evaluation dataset
 Download FreiHAND evaluation set and HO-3D evaluation set from [FreiHAND](https://github.com/lmb-freiburg/freihand) and [HO-3D](https://codalab.lisn.upsaclay.fr/competitions/4318) and place them in `uncertainty_eval/freihand/gt/` and `uncertainty_eval/ho3d/gt/`.
 ```
@@ -48,6 +48,11 @@ hand_uncertainty/
 ## Evaluation
 Run evaluation on FreiHAND and HO-3D datasets as follows, results are stored in `results/`.  
 You need to change the model checkpoint path `ckpt_path`, model type `model_type` and experiment name `exp_name` in the [code](https://github.com/kaist-ami/Hand-Uncertainty/blob/main/hamer_uncertainty/configs_hydra/model_config.yaml).
+* **ours**: our proposed correlation-aware uncertainty parameterization
+* **diag**: diagonal covariance parameterization
+* **full**: full covariance parameterization
+* **ours_wo_linear**: removing the linear layer from our parameterization
+  
 ```
 python eval.py 
 python eval_uncertainty.py 
@@ -66,3 +71,11 @@ python eval_uncertainty.py --dataset ho3d --exp ${EXP_NAME} --pred_file_dir ${PA
 ```
 
 Scores are saved in `uncertainty_eval/save/${DATASET}/${EXP_NAME}/scores.txt`.
+
+# 🧪 Training
+You need to change the model type `model_type` in the [code](https://github.com/kaist-ami/Hand-Uncertainty/blob/main/hamer_uncertainty/configs_hydra/train.yaml).
+* **ours**: our proposed correlation-aware uncertainty parameterization
+* **diag**: diagonal covariance parameterization
+* **full**: full covariance parameterization
+* **ours_wo_linear**: removing the linear layer from our parameterization
+
