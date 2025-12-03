@@ -46,7 +46,7 @@ hand_uncertainty/
 ```
 
 ## Evaluation
-Run evaluation on FreiHAND and HO-3D datasets as follows, results are stored in `results/`.
+Run evaluation on FreiHAND and HO-3D datasets as follows, results are stored in `results/`.  
 You need to change the model checkpoint path `ckpt_path`, model type `model_type` and experiment name `exp_name` in the [code](https://github.com/kaist-ami/Hand-Uncertainty/blob/main/hamer_uncertainty/configs_hydra/model_config.yaml).
 ```
 python eval.py 
@@ -56,7 +56,7 @@ python eval_uncertainty.py
 For [FreiHAND](https://github.com/lmb-freiburg/freihand) and [HO-3D](https://codalab.lisn.upsaclay.fr/competitions/4318), `.json` prediction files stored in `results/` can be used for evaluation using their corresponding evaluation processes.
 
 ## Evaluate uncertainty estimation performance
-Run below command to evaluate AUSC, AUSE and pearson correlation.
+Run below command to evaluate AUSC, AUSE and pearson correlation.  
 You need to pass experiment name ${EXP_NAME} and directory where the `.json` prediction files are stored ${PATH_TO_PRED_DIR} as an argument to the script.
 
 ```
