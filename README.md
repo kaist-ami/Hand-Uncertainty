@@ -4,7 +4,7 @@
 # 📣 Getting started
 
 ## Model checkpoints
-You can download model checkpoints (ours and baselines) from [stage1 model](https://drive.google.com/file/d/1jI9feFcUuhXst1pM1_xOMvqE8cgUzP_t/view?usp=sharing).
+You can download model checkpoints from [ours and baselines](https://drive.google.com/drive/folders/1EZv38cIjQ4PGl1YhdOjTEo8Z4hU2utzK?usp=sharing).
 After downloading the models, place them in `./checkpoints`.
 
 ```
@@ -27,6 +27,20 @@ pip install -r requirements.txt
 ## HaMeR data and model preparation
 Follow the instructions in [HaMeR](https://github.com/geopavlakos/hamer) to prepare trained hamer models, MANO model, hamer training data and hamer evaluation data.
 
+# 🚀 Training
+You need to change the model type `model_type` in the [code](https://github.com/kaist-ami/Hand-Uncertainty/blob/main/hamer_uncertainty/configs_hydra/train.yaml).  
+
+[Model Type]
+* **ours**: our proposed correlation-aware uncertainty parameterization
+* **diag**: diagonal covariance parameterization
+* **full**: full covariance parameterization
+* **ours_wo_linear**: removing the linear layer from our parameterization
+
+You can pass number of GPU device ${DEVICE_NUM} and experiment name ${EXP_NAME} as an argument to the script.
+```
+CUDA_VISIBLE_DEVICES=${DEVICE_NUM} python train.py exp_name=${EXP_NAME} experiment=hamer_vit_transformer trainer=gpu launcher=local
+```
+
 # 🧪 Testing
 ## Prepare evaluation dataset
 Download FreiHAND evaluation set and HO-3D evaluation set from [FreiHAND](https://github.com/lmb-freiburg/freihand) and [HO-3D](https://codalab.lisn.upsaclay.fr/competitions/4318) and place them in `uncertainty_eval/freihand/gt/` and `uncertainty_eval/ho3d/gt/`.
@@ -47,11 +61,7 @@ hand_uncertainty/
 
 ## Evaluation
 Run evaluation on FreiHAND and HO-3D datasets as follows, results are stored in `results/`.  
-You need to change the model checkpoint path `ckpt_path`, model type `model_type` and experiment name `exp_name` in the [code](https://github.com/kaist-ami/Hand-Uncertainty/blob/main/hamer_uncertainty/configs_hydra/model_config.yaml).
-* **ours**: our proposed correlation-aware uncertainty parameterization
-* **diag**: diagonal covariance parameterization
-* **full**: full covariance parameterization
-* **ours_wo_linear**: removing the linear layer from our parameterization
+You need to change the model checkpoint path `ckpt_path`, model type `model_type` and experiment name `exp_name` in the [code](https://github.com/kaist-ami/Hand-Uncertainty/blob/main/hamer_uncertainty/configs_hydra/model_config.yaml).  
   
 ```
 python eval.py 
@@ -72,10 +82,22 @@ python eval_uncertainty.py --dataset ho3d --exp ${EXP_NAME} --pred_file_dir ${PA
 
 Scores are saved in `uncertainty_eval/save/${DATASET}/${EXP_NAME}/scores.txt`.
 
-# 🧪 Training
-You need to change the model type `model_type` in the [code](https://github.com/kaist-ami/Hand-Uncertainty/blob/main/hamer_uncertainty/configs_hydra/train.yaml).
-* **ours**: our proposed correlation-aware uncertainty parameterization
-* **diag**: diagonal covariance parameterization
-* **full**: full covariance parameterization
-* **ours_wo_linear**: removing the linear layer from our parameterization
+# 📚 Citation
+If you found this code useful, please consider citing our paper.
+
+```
+@article{chae2025learning,
+  title={Learning Correlation-aware Aleatoric Uncertainty for 3D Hand Pose Estimation},
+  author={Chae-Yeon, Lee and Hyeon-Woo, Nam and Oh, Tae-Hyun},
+  journal={arXiv preprint arXiv:2509.01242},
+  year={2025}
+}
+```
+
+# 🙏 Acknowledgement
+We heavily borrow the code from the following projects. We sincerely appreciate the authors of these projects for making their work publicly available:
+- [HaMeR](https://github.com/geopavlakos/hamer)
+- [FreiHAND](https://github.com/lmb-freiburg/freihand)
+- [HO-3D](https://codalab.lisn.upsaclay.fr/competitions/4318)
+
 
