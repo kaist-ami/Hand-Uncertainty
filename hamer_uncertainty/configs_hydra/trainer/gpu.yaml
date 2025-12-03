@@ -3,4 +3,4 @@ defaults:
   - default_hamer.yaml
 
 accelerator: gpu
-devices: [3] #[2,5,6,7]
+devices: [0] #[2,5,6,7]
