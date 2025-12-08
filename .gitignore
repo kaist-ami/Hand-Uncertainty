@@ -160,6 +160,6 @@ _DATA/
 .gitmodules/
 dataset/
 LICENSE.md/
-uncertainty_evaluation/save/
-uncertainty_evaluation/ho3d/
-uncertainty_evaluation/freihand/
+uncertainty_eval/save/
+uncertainty_eval/ho3d/
+uncertainty_eval/freihand/
